@@ -4,22 +4,23 @@ var Queue = DataStructures.Queue;
 
 var stack = new Stack();
 
-for (var i = 0; i < 10; i++)
- stack.push(i);
+for (var i = 0; i < 10; i++) {
+  stack.push(i);
+}
 
 function print(stack) {
 
   var queue = new Queue();
 
-  do {
+  while (!stack.isEmpty()) {
     queue.push(stack.pop());
-    if (queue.length > 5) {
+    if (queue.length > 6) {
       queue.pop();
-    }
+  }
 
-  } while (!stack.isEmpty());
+ }
 
-  return queue.top();
+ return queue.peek();
 }
 
 console.log(print(stack));
